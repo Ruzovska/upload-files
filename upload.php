@@ -16,6 +16,15 @@
   {
     $pathDir = "files-uploaded/";
     for ($i = 0; $i < sizeof($_FILES['uploaded_files']['name']); $i++) {
+      // if (intdiv(($i+1), 10) == 0) {
+      //   $zeros = "00";
+      // } else {
+      //   if ((intdiv((intdiv(($i+1), 10)), 10) == 0) {
+      //     $zeros = "0";
+      //   } else {
+      //     $zeros = "";
+      //   }
+      // }
       $fileName = "UploadedFile00" . ($i+1) . ".jpg";
       $pathFile = $pathDir . $fileName;
       if (move_uploaded_file($_FILES['uploaded_files']['tmp_name'][$i], $pathFile)) {
